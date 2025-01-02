@@ -17,4 +17,22 @@ public class Customer {
         System.out.println("Address: " + address);
         System.out.println("Phone: " + phone);
     }
+
+    @Override
+    public String toString() {
+        return "Customer{ID='" + customerId + "', Name='" + name + "', Address='" + address + "', Phone='" + phone + "'}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Customer customer = (Customer) obj;
+        return customerId.equals(customer.customerId);
+    }
+
+    @Override
+    public int hashCode() {
+        return customerId.hashCode();
+    }
 }

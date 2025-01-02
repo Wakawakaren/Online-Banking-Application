@@ -22,4 +22,30 @@ public class BankAccount {
         System.out.println("Balance: " + balance);
         System.out.println("Account Type: " + accountType);
     }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "BankAccount{AccountNumber='" + accountNumber + "', Balance=" + balance + "}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        BankAccount account = (BankAccount) obj;
+        return accountNumber.equals(account.accountNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return accountNumber.hashCode();
+    }
 }
